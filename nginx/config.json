@@ -1,0 +1,14 @@
+{
+  "listeners": {
+    "*:8080": {
+      "pass": "applications/python"
+    }
+  },
+  "applications": {
+    "python": {
+      "type": "python",
+      "path": "/usr/src/app/src/",
+      "module": "wsgi"
+    }
+  }
+}

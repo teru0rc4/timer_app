@@ -1,0 +1,24 @@
+# 利用するdocker-comnposeのバージョン
+version: '3'
+
+# アプリケーションで動かすための各要素
+services:
+  # サービス名
+  timer_app:
+#    image: selenium/standalone-chrome-debug
+    # 起動するコンテナの設定
+    build:
+      # ディレクトリの指定
+      context: .
+      # 使用するDockerfileの名前を指定、「Dockerfile」という名前なら省略可能
+      dockerfile: Dockerfile
+    container_name: timer_app_container
+    # ディレクトリのマウントの設定、:前がホストのディレクトリ、:後がコンテナのディレクトリ
+    volumes:
+      - ./:/usr/src/app
+      - ./nginx:/docker-entrypoint.d
+    working_dir: /usr/src/app
+    # ポート設定、:前がホスト側のポート、:あとがコンテナ側のポート
+    ports:
+      - "8000:8080"
+
