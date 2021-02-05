@@ -5,7 +5,6 @@ version: '3'
 services:
   # サービス名
   timer_app:
-#    image: selenium/standalone-chrome-debug
     # 起動するコンテナの設定
     build:
       # ディレクトリの指定

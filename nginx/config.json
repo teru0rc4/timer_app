@@ -6,9 +6,10 @@
   },
   "applications": {
     "python": {
-      "type": "python",
+      "type": "python 3.7",
       "path": "/usr/src/app/src/",
-      "module": "wsgi"
+      "module": "asgi",
+      "callable": "app"
     }
   }
 }
