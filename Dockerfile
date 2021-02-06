@@ -12,7 +12,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install pipenv && \
-    pipenv install --system --ignore-pipfile
+    pipenv install --system --ignore-pipfile --deploy
 
 # port used by the listener in config.json
 EXPOSE 8080
